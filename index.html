@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
+    <title>GifTastic</title>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src = "javascript.js"></script>
+</head>
+<body>
+
+<div class="container">
+<h1>What Kinda Gif You Want?</h1>
+
+<!-- Rendered Buttons will get Dumped Here  --> 
+<div id="buttons-view"></div>
+
+    <form id="gif-form">
+        <label for="gif-input">Whatcha Looking For?</label>
+        <input type="text" id="gif-input"><br>
+
+        <!-- Button triggers new movie to be added -->
+        <input id="add-gif" type="submit" value="Search">
+    </form>
+
+<div id="gif-view"></div>
+
+
+
     
-    
+</div>
 </body>
 </html>

@@ -1,6 +1,47 @@
 $(document).ready(function(){
 
-    //THIS ALL NEEDS TO BE WRAPPED IN A BUTTON EVENT
+var gifsGoHere = [];
+function renderButtons() {
+
+    // Deleting the buttons prior to adding new movies
+    // (this is necessary otherwise you will have repeat buttons)
+    $("#buttons-view").empty();
+
+    // Looping through the array of movies
+    for (var i = 0; i < gifsGoHere.length; i++) {
+
+      // Then dynamically generating buttons for each movie in the array
+      // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+      var a = $("<button>");
+      // Adding a class of movie to our button
+      a.addClass("gif");
+      // Adding a data-attribute
+      a.attr("data-name", gifsGoHere[i]);
+      // Providing the initial button text
+      a.text(gifsGoHere[i]);
+      // Adding the button to the buttons-view div
+      $("#buttons-view").append(a);
+    }
+  }
+
+$("#add-gif").on("click", function(event) {
+    event.preventDefault();
+
+    // This line grabs the input from the textbox
+    var gif = $("#gif-input").val().trim();
+
+    // Adding the movie from the textbox to our array
+    gifsGoHere.push(gif);
+    console.log(gifsGoHere);
+
+    renderButtons();
+});
+
+
+//BUTTON EVENT
+$(document).on('click', ".gif", function() {
+
+//GIPHYS DIPLAYED 
 var query= 'cats';
 $.ajax({
     url:'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=' + query +'&limit=9',
@@ -23,8 +64,8 @@ $.ajax({
 
         $('body').append(imgTag);
     }
+    })
 });
-// BUTTON END WRAP
 
 
 
