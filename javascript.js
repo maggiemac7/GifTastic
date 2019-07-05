@@ -30,6 +30,8 @@ $("#add-gif").on("click", function(event) {
     // This line grabs the input from the textbox
     var gif = $("#gif-input").val().trim();
 
+    $("#gif-input").val(" ");
+
     // Adding the movie from the textbox to our array
     gifsGoHere.push(gif);
     console.log(gifsGoHere);
@@ -42,9 +44,8 @@ $("#add-gif").on("click", function(event) {
 $(document).on('click', ".gif", function() {
 
 //GIPHYS DIPLAYED 
-var query= 'cats';
 $.ajax({
-    url:'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=' + query +'&limit=9',
+    url:'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=' + $(this).attr("data-name") +'&limit=9',
     method:'GET'
 }).done(function(response, err){
     console.log('data', response, 'err', err);
