@@ -69,7 +69,6 @@ $.ajax({
 });
 
 
-
 $(document).on('click', '.img-click',function() {
     var gifLink = $(this).attr('data-gif');
     var stillLink = $(this).attr('data-still');
