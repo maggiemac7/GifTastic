@@ -45,9 +45,10 @@ $(document).on('click', ".gif", function() {
 
 //GIPHYS DIPLAYED 
 $.ajax({
-    url:'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=' + $(this).attr("data-name") +'&limit=9',
-    method:'GET'
-}).done(function(response, err){
+    url:'http://api.giphy.com/v1/gifs/search?api_key=mWNYC0kNMPi1MNBjjSx8YTF4a03Q0gN5&q=' + $(this).attr('data-name') +'&limit=9',
+    method:'GET',
+    crossDomain: true,
+}).then(function(response, err){
     console.log('data', response, 'err', err);
     for (var i = 0; i < response.data.length; i++) {
         console.log(response.data[i].rating)
