@@ -45,7 +45,7 @@ $(document).on('click', ".gif", function() {
 
 //GIPHYS DIPLAYED 
 $.ajax({
-    url:'http://api.giphy.com/v1/gifs/search?api_key=mWNYC0kNMPi1MNBjjSx8YTF4a03Q0gN5&q=' + $(this).attr('data-name') +'&limit=9',
+    url:'https://api.giphy.com/v1/gifs/search?api_key=mWNYC0kNMPi1MNBjjSx8YTF4a03Q0gN5&q=' + $(this).attr('data-name') +'&limit=9',
     method:'GET',
     crossDomain: true,
 }).then(function(response, err){
